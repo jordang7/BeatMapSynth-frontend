@@ -15,7 +15,7 @@ import {
 import { Field, Form, Formik } from "formik";
 
 const BASE_URL =
-  "http://beatmapsynth-env.us-east-2.elasticbeanstalk.com/convert";
+  "https://beatmapsynth-env.us-east-2.elasticbeanstalk.com/convert";
 
 export default function Home() {
   function validateName(value) {
