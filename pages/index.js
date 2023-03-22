@@ -14,8 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 
-const BASE_URL =
-  "https://beatmapsynth-env.us-east-2.elasticbeanstalk.com/convert";
+const BASE_URL = "https://www.beatsaberai.com/convert";
 
 export default function Home() {
   function validateName(value) {
