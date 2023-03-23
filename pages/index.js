@@ -39,7 +39,16 @@ export default function Home() {
                 const response = await fetch(
                   `${BASE_URL}/search?url=${values.song}&difficulty=${values.difficulty}`
                 );
-                console.log(response);
+                const blob = await response.blob();
+
+                const url = window.URL.createObjectURL(new Blob([blob]));
+
+                let alink = document.createElement("a");
+
+                alink.download = `${values.song}-${values.difficulty}.zip`;
+                alink.href = url;
+                alink.click();
+
                 resetForm();
               }}
             >
