@@ -35,6 +35,7 @@ export default function Home() {
             <Formik
               initialValues={{ song: "", difficulty: "normal" }}
               onSubmit={async (values, { resetForm }) => {
+                console.log("CALLING ->", BASE_URL);
                 const response = await fetch(
                   `${BASE_URL}/search?url=${values.song}&difficulty=${values.difficulty}`
                 );
