@@ -13,8 +13,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
-
-const BASE_URL = "https://www.beatsaberai.com/convert";
+const BASE_URL = "https://api.beatsaberai.com/convert";
 
 export default function Home() {
   function validateName(value) {
