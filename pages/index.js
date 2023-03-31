@@ -48,13 +48,13 @@ export default function Home() {
                   const zipUrl = `https://skystudioapps.com/bs-viewer/?url=${url}`;
                   console.log("URL", url, zipUrl);
 
-                  setZipUrl(zupUrl);
-
                   let alink = document.createElement("a");
 
                   alink.download = `${values.song}-${values.difficulty}.zip`;
                   alink.href = url;
                   alink.click();
+
+                  setZipUrl(zipUrl);
                 } else {
                   alert("Error, please try again");
                 }
