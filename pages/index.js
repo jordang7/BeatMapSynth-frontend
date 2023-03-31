@@ -13,9 +13,11 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
+import { useState } from "react";
 const BASE_URL = "https://api.beatsaberai.com/convert";
 
 export default function Home() {
+  const [zipUrl, setZipUrl] = useState("");
   function validateName(value) {
     let error;
     if (!value) {
@@ -43,6 +45,10 @@ export default function Home() {
                   const blob = await response.blob();
 
                   const url = window.URL.createObjectURL(new Blob([blob]));
+                  const zipUrl = `https://skystudioapps.com/bs-viewer/?url=${url}`;
+                  console.log("URL", url, zipUrl);
+
+                  setZipUrl(zupUrl);
 
                   let alink = document.createElement("a");
 
@@ -123,6 +129,7 @@ export default function Home() {
                 </Form>
               )}
             </Formik>
+            <Box p={4}>{zipUrl ? <iframe src={zipUrl} /> : ""}</Box>
           </VStack>
         </Center>
       </Box>
