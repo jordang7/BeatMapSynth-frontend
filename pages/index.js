@@ -17,7 +17,7 @@ import { useState } from "react";
 const BASE_URL = "https://api.beatsaberai.com/convert";
 
 export default function Home() {
-  const [zipUrl, setZipUrl] = useState("https://skystudioapps.com/bs-viewer/");
+  const [zipUrl, setZipUrl] = useState("");
   function validateName(value) {
     let error;
     if (!value) {
